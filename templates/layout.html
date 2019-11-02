@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MyFlaskApp</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/product.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/product-detail.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/orders.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/forms.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/cart.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/auth.css')}}">
+  </head>
+  <body>
+    {% include '/includes/_navbar.html' %}
+    <div class="container">
+      {% block body %}{% endblock %}
+    </div>
+
+  </body>
+</html>

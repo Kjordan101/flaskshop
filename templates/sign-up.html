@@ -1,0 +1,23 @@
+{%extends 'layout.html' %}
+{% block body %}
+{% from "/includes/_formhelpers.html" import render_field %}
+<main>
+  <form class="product-form" action="/sign-up" method="POST" enctype="multipart/form-data">
+      <div class="form-control">
+        {{ render_field(form.email) }}
+      </div>
+      <div class="form-control">
+        {{ render_field(form.name) }}
+      </div>
+      <div class="form-control">
+        {{ render_field(form.pword) }}
+      </div>
+      <div class="form-control">
+        {{ render_field(form.confirm_pword) }}
+      </div>
+          <!-- <input type="hidden" value=" Kevin put the csrf token protection" > -->
+      <!-- <input type="hidden" name="_csrf"value="<%= csrfToken%>"> -->
+      <button class="btn" type="submit"> Sign Up </button>
+  </form>
+</main>
+{% endblock %}

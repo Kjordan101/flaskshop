@@ -1,0 +1,15 @@
+<div class="topnav">
+<p class="{{'active' if path == '/products/itm' else ''}}"> FlaskShop </p>
+<a class="{{ 'active' if path == '/' else ''}} " href="/">Home</a>
+<a href="/products" class="{{ 'active' if path == '/products' else '' }}  ">Products</a>
+{% if session['loggedin'] == True%}
+<a href="/cart" class="{{ 'active' if path == '/cart' else '' }}  ">Cart</a>
+<a href="/orders" class="{{ 'active' if path == '/orders' else '' }}  ">Orders</a>
+<a href="/admin/add-product" class="{{ 'active' if path == '/admin/add-product' else ' ' }}  ">Add Product</a>
+<a href="/admin/products" class="{{ 'active' if path == '/admin/product' else '' }}  ">Admin Products</a>
+<a href="/logout" class=" ">Sign Out</a>
+{% else %}
+<a href="/login" class="{{ 'active' if path == '/login' else '' }}">Login</a>
+<a href="/sign-up" class="{{ 'active' if path == '/sign-up' else '' }}">Sign Up</a>
+{% endif %}
+</div>

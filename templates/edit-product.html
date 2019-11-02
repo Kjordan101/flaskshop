@@ -1,0 +1,44 @@
+{%extends 'layout.html' %}
+{% block body %}
+{% from "/includes/_formhelpers.html" import render_field %}
+{% if path == '/admin/add-product' %}
+<main>
+    <form class="product-form" action="/admin/add-product" method="POST" enctype="multipart/form-data">
+        <div class="form-control">
+          {{ render_field(form.title) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.imageurl) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.price) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.description) }}
+        </div>
+            <!-- <input type="hidden" value=" Kevin put the csrf token protection" > -->
+        <!-- <input type="hidden" name="_csrf"value="<%= csrfToken%>"> -->
+        <button class="btn" type="submit"> Add Product </button>
+    </form>
+    {% else %}
+    <form class="product-form" action="/admin/edit-product/{{productId}}" method="POST" enctype="multipart/form-data">
+        <div class="form-control">
+          {{ render_field(form.title) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.imageurl) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.price) }}
+        </div>
+        <div class="form-control">
+          {{ render_field(form.description) }}
+        </div>
+            <!-- <input type="hidden" value=" Kevin put the csrf token protection" > -->
+        <!-- <input type="hidden" name="_csrf"value="<%= csrfToken%>"> -->
+        <button class="btn" type="submit"> Add Product </button>
+      </form>
+    {% endif %}
+</main>
+
+{% endblock %}
