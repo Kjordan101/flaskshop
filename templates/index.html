@@ -21,9 +21,6 @@
                     </div>
                     <div class="card__actions">
                         <a href="/products/{{ product.id }}" class="btn">Details</a>
-                        {%if session['loggedin'] == true%}
-                        {% include '/includes/add-to-cart.html' %}
-                        {% endif %}
                     </div>
                 </article>
                 {% endfor %}
